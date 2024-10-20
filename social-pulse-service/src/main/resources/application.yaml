@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/socialpulsedb}
+    username: ${SPRING_DATASOURCE_USERNAME:socialpulse}
+    password: ${SPRING_DATASOURCE_PASSWORD:socialpulse}
+  jpa:
+    hibernate:
+      ddl-auto: update
+      format_sql: true
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL81Dialect
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: always
+    properties:
+      org:
+        quartz:
+          jobStore:
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+            isClustered: true
+          scheduler:
+            instanceId: AUTO
+
+# DO NOT COMMIT CREDENTIALS, USE ONLY LOCALLY
+
+twitter:
+  client-id: ${TWITTER_CLIENT_ID}
+  client-secret: ${TWITTER_CLIENT_SECRET}
+  scopes: offline.access tweet.read tweet.write users.read
+  callback-url: ${TWITTER_CALLBACK_URL:http://localhost:3000/twitter-callback}
+
+# facebook:
+#   app-id: ${FACEBOOK_APP_ID}
+#   app-secret: ${FACEBOOK_APP_SECRET}
+#   facebook-permissions: pages_manage_posts,pages_show_list
+#   instagram-permissions: pages_manage_posts,pages_show_list,instagram_basic,instagram_content_publish
+#   facebook-callback-url: ${FACEBOOK_CALLBACK_URL}
+#   instagram-callback-url: ${INSTAGRAM_CALLBACK_URL}
+
+firebase:
+  project-id: ${FIREBASE_PROJECT_ID}
+  config-path: classpath:firebase-service-account.json

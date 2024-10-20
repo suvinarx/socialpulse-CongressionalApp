@@ -1,0 +1,92 @@
+{
+  "facebookPosts": [
+    {
+      "id": "8e28eb73-3bb6-43eb-94cd-08509a0ce17a",
+      "message": "Check out our latest product!",
+      "media": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+      "scheduled": true,
+      "scheduledPublishTime": "2024-10-15 14:00:00.0",
+      "createdAt": "2024-09-15 05:25:00.214",
+      "updatedAt": "2024-09-15 05:27:15.069"
+    },
+    {
+      "id": "8e28eb73-3bb6-43eb-94ad-08509a0ce17a",
+      "message": "Join us for our upcoming event!",
+      "media": null,
+      "scheduled": true,
+      "scheduledPublishTime": "2024-10-20 18:30:00.0",
+      "createdAt": "2024-09-15 05:25:00.214",
+      "updatedAt": "2024-09-15 05:27:15.069"
+    },
+    {
+      "id": "8e28eb73-3bb6-43eb-94cd-08509a0ce17b",
+      "message": "Happy holidays from our team!",
+      "media": "https://www.virtualedge.org/wp-content/uploads/2022/03/Happy-Holidays-Greetings-for-Friends-Family.webp",
+      "scheduled": false,
+      "scheduledPublishTime": null,
+      "createdAt": "2024-09-15 05:25:00.214",
+      "updatedAt": "2024-09-15 05:27:15.069"
+    }
+  ],
+  "instagramPosts": [
+    {
+      "id": "ig-abcd-efgh-1234",
+      "message": "Beautiful sunset at the beach #nofilter",
+      "media": "https://aanganresortmandawa.com/wp-content/uploads/2021/09/Famous-Sunset-and-Sunrise-Spots-in-Rajasthan.jpg",
+      "scheduled": true,
+      "scheduledPublishTime": "2024-11-01 19:00:00.0",
+      "createdAt": "2024-10-28 10:15:00.214",
+      "updatedAt": "2024-10-28 10:20:15.069"
+    },
+    {
+      "id": "ig-bcde-fghi-2345",
+      "message": "Behind the scenes at our photoshoot",
+      "media": "https://platform.vox.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/19397812/1048232144.jpg.jpg?quality=90&strip=all&crop=0%2C0.0044935741889063%2C100%2C99.991012851622&w=2400",
+      "scheduled": true,
+      "scheduledPublishTime": "2024-11-05 12:00:00.0",
+      "createdAt": "2024-11-01 14:30:00.214",
+      "updatedAt": "2024-11-01 14:35:15.069"
+    },
+    {
+      "id": "ig-cdef-ghij-3456",
+      "message": "New product launch! 🎉",
+      "media": "https://www.tutorialrepublic.com/snippets/designs/multiple-item-product-carousel.png",
+      "scheduled": false,
+      "scheduledPublishTime": null,
+      "createdAt": "2024-11-10 09:00:00.214",
+      "updatedAt": "2024-11-10 09:05:15.069"
+    }
+  ],
+  "pinterestPosts": [
+    {
+      "id": "pin-1a2b-3c4d-5e6f",
+      "message": "10 Easy DIY Home Decor Ideas",
+      "description": "Transform your space with these simple and affordable DIY projects!",
+      "media": null,
+      "scheduled": true,
+      "scheduledPublishTime": "2024-09-25 10:00:00.0",
+      "createdAt": "2024-09-20 16:45:00.214",
+      "updatedAt": "2024-09-20 16:50:15.069"
+    },
+    {
+      "id": "pin-2b3c-4d5e-6f7g",
+      "message": "Healthy Breakfast Recipes",
+      "description": "Start your day right with these nutritious and delicious breakfast ideas!",
+      "media": null,
+      "scheduled": true,
+      "scheduledPublishTime": "2024-10-02 08:30:00.0",
+      "createdAt": "2024-09-28 13:20:00.214",
+      "updatedAt": "2024-09-28 13:25:15.069"
+    },
+    {
+      "id": "pin-3c4d-5e6f-7g8h",
+      "message": "Summer Fashion Trends 2025",
+      "description": "Get ahead of the curve with these upcoming summer fashion must-haves!",
+      "media": "https://i.pinimg.com/originals/59/d8/71/59d871bb341843b794e43d7541867256.png",
+      "scheduled": false,
+      "scheduledPublishTime": null,
+      "createdAt": "2024-12-15 11:10:00.214",
+      "updatedAt": "2024-12-15 11:15:15.069"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+version: '3'
+services:
+  postgres:
+    image: "postgres:14-alpine"
+    container_name: social-pulse-postgres
+    #volumes:
+    #  - social-pulse-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=socialpulsedb
+      - POSTGRES_USER= 
+      - POSTGRES_PASSWORD= 
+
+  social-pulse-service:
+    build: ./social-pulse-service
+    depends_on:
+      - postgres
+    container_name: social-pulse-service
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/socialpulsedb
+      - SPRING_DATASOURCE_USERNAME=socialpulse
+      - SPRING_DATASOURCE_PASSWORD=socialpulse
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - TWITTER_CLIENT_ID=${TWITTER_CLIENT_ID}
+      - TWITTER_CLIENT_SECRET=${TWITTER_CLIENT_SECRET}
+      - TWITTER_CALLBACK_URL=${TWITTER_CALLBACK_URL}
+      - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
+    ports:
+      - 8080:8080
+
+
+  social-pulse-ui:
+    build: ./social-pulse-ui
+    container_name: social-pulse-ui
+    ports:
+      - 3000:3000
+    links:
+      - social-pulse-service
+
+
+volumes:
+  social-pulse-data:

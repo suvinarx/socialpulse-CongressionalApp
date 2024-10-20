@@ -1,0 +1,174 @@
+type Query {
+    business(businessId: ID!): Business
+    facebookAccounts(businessId: ID!): [FacebookAccount]
+    instagramAccounts(businessId: ID!): [InstagramAccount]
+    twitterAccounts(businessId: ID!): [TwitterAccount]
+    facebookPosts(queryFilter: QueryFilter!): [FacebookPost]
+    instagramPosts(queryFilter: QueryFilter!): [InstagramPost]
+    twitterTweets(queryFilter: QueryFilter!): [TwitterTweet]
+    facebookAuthUrl: AuthUrl
+    instagramAuthUrl: AuthUrl
+    twitterAuthUrl: AuthUrl
+    twitterTweetById(id: String!): TwitterTweet
+}
+
+type Mutation {
+    registerBusiness(registerBusinessInput: RegisterBusinessInput!): Business
+    createFacebookPost(createFacebookPostInput: CreateFacebookPostInput!): FacebookPost
+    createInstagramPost(createInstagramPostInput: CreateInstagramPostInput!): InstagramPost
+    createTwitterTweet(createTwitterTweetInput: CreateTwitterTweetInput!): TwitterTweet
+    authorizeFacebook(authorizeFacebookInput: AuthorizeFacebookInput!): [FacebookAccount]
+    authorizeInstagram(authorizeInstagramInput: AuthorizeInstagramInput!): [InstagramAccount]
+    authorizeTwitter(authorizeTwitterInput: AuthorizeTwitterInput!): TwitterAccount
+    updateTwitterTweet(updateTwitterTweetInput: UpdateTwitterTweetInput!): TwitterTweet
+}
+
+# entity types
+
+type Business {
+    id: String
+    name: String
+    email: String
+    createdAt: String
+    updatedAt: String
+}
+
+type FacebookPost {
+    id: ID
+    business: Business
+    facebookAccount: FacebookAccount
+    facebookId: String
+    message: String
+    link: String
+    place: String
+    tags: String
+    scheduled: Boolean
+    scheduledPublishTime: String
+    createdAt: String
+    updatedAt: String
+}
+
+type InstagramPost {
+    id: ID
+    business: Business
+    instagramAccount: InstagramAccount
+    instagramId: String
+    caption: String
+    imageUrl: String
+    scheduled: Boolean
+    scheduledPublishTime: String
+    createdAt: String
+    updatedAt: String
+}
+
+type TwitterTweet {
+    id: ID
+    business: Business
+    twitterAccount: TwitterAccount
+    twitterId: String
+    tweetId: String
+    message: String
+    media: [String]
+    scheduled: Boolean
+    scheduledPublishTime: String
+    createdAt: String
+    updatedAt: String
+}
+
+type FacebookAccount {
+    id: ID
+    facebookId: String
+    name: String
+    createdAt: String
+    updatedAt: String
+}
+
+type InstagramAccount {
+    id: ID
+    instagramId: String
+    facebookAccount: FacebookAccount
+    name: String
+    createdAt: String
+    updatedAt: String
+}
+
+
+type TwitterAccount {
+    id: ID
+    twitterId: String
+    name: String
+    createdAt: String
+    updatedAt: String
+}
+
+type AuthUrl {
+    url: String
+    verifier: String
+}
+
+#input types
+
+input QueryFilter {
+    businessId: ID
+#    since: String
+#    until: String
+}
+
+input RegisterBusinessInput {
+    name: String
+    email: String
+    password: String
+}
+
+input CreateFacebookPostInput {
+    businessId: ID
+    facebookAccountId: ID
+    message: String
+    link: String
+    place: String
+    tags: String
+    scheduledPublishTime: String
+}
+
+input CreateInstagramPostInput {
+    businessId: ID
+    instagramAccountId: ID
+    caption: String
+    imageUrl: String
+    scheduledPublishTime: String
+}
+
+input CreateTwitterTweetInput {
+    businessId: ID
+    twitterAccountId: ID
+    message: String
+    userId: String
+    imageUrl: String
+    scheduledPublishTime: String
+}
+
+input AuthorizeFacebookInput {
+    businessId: ID
+    code: String
+}
+
+input AuthorizeInstagramInput {
+    businessId: ID
+    code: String
+}
+
+input AuthorizeTwitterInput {
+    businessId: ID
+    code: String
+    verifier: String
+}
+
+input UpdateTwitterTweetInput {
+  id: ID!
+  businessId: ID!
+  twitterAccountId: ID!
+  message: String
+  userId: String
+  imageUrl: String
+  scheduledPublishTime: String
+}

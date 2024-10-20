@@ -100,9 +100,3 @@ Access the application at `http://localhost:3000`.
 - **AI Integration**: Python (for generating emojis and tags)
 - **Containerization**: Docker
 
-## Contact
-
-For any questions or support, please reach out:
-
-- **GitHub**: [suvinarx](https://github.com/suvinarx)
-- **Email**: your-email@example.com
